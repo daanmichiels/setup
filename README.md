@@ -1,3 +1,3 @@
-# README #
+# dotfiles #
 
 My configuration files.
