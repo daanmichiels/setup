@@ -1,0 +1,2 @@
+$pdflatex = 'pdflatex -interaction=nonstopmode';
+

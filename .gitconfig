@@ -1,0 +1,12 @@
+[user]
+	name = daanmichiels
+	email = michielsdaan@gmail.com
+[core]
+	autocrlf = true
+
+# I'm not sure what this is, but I believe it was
+# done by Github for Windows
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
