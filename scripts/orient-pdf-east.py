@@ -4,7 +4,7 @@ from subprocess import call
 
 if len(sys.argv) < 2:
     print("No files given.")
-    print("Usage: rotate-pdf-right.py <file1> [<file2> ...]")
+    print("Usage: orient-pdf-east.py <file1> [<file2> ...]")
     sys.exit(0)
 
 files = sys.argv[1:]
