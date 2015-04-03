@@ -6,6 +6,7 @@ It is then written to the specified file.
 """
 
 import sys
+import os
 import ipgetter
 
 if len(sys.argv) < 2:
