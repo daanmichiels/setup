@@ -86,6 +86,8 @@ pwd = getpass.getpass("Password for " + user + "@" + server + ": ")
 # Copy the file to the server
 remote_filename = os.path.basename(filename)
 remote_filename = "".join(ch for ch in remote_filename if ch in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.-") # filter out everything that's not nice
+if remote_filename == '':
+    remote_filename = 'temp'
 remote_filename = "printing-temp/" + remote_filename
 call(["pscp", "-pw", pwd, filename, user + "@" + server + ":" + remote_filename])
 
@@ -104,9 +106,10 @@ else:
 if page_ranges != "":
     command.extend(["-o", "page-ranges=" + page_ranges])
 command.append(remote_filename)
-# call(command)
+call(command)
 
 # Now set a timer to remove the file from the server in an hour
-call(["plink", "-pw", pwd, user + "@" + server, "echo \"rm ~/" + remote_filename + "\" | at now + 1 hour"])
+# This is not working yet
+# call(["plink", "-pw", pwd, user + "@" + server, "echo \"rm ~/" + remote_filename + "\" | at now + 1 hour"])
 
 
