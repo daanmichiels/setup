@@ -1,0 +1,13 @@
+Config { bgColor = "#181818"
+       , fgColor = "#d8d8d8"
+       , font = "xft:DejaVu Sans Mono:style=Book:pixelsize=32"
+       , commands = [ Run Weather "KCMI" ["-t","<tempC>°C","-L","5","-H","16","--normal","#d8d8d8","--high","#d8d8d8","--low","#86c1b9"] 2000
+                    , Run BatteryP ["BAT0"] ["-t","<left>%"] 100
+                    , Run Date "%a %-d %b %H:%M" "date" 100
+                    , Run StdinReader ]
+       , position = TopW L 90
+       , lowerOnStart = True
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %KCMI% | %battery% | %date%"
+       }
