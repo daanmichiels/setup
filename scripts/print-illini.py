@@ -108,6 +108,9 @@ if page_ranges != "":
 command.append(remote_filename)
 call(command)
 
+print("Done.")
+raw_input()
+
 # Now set a timer to remove the file from the server in an hour
 # This is not working yet
 # call(["plink", "-pw", pwd, user + "@" + server, "echo \"rm ~/" + remote_filename + "\" | at now + 1 hour"])
