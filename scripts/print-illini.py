@@ -31,6 +31,14 @@ print("Printing file " + filename + " on printer " + printer + ".")
 
 # Configure the printing
 while True:
+    sys.stdout.write("Printer (" + printer + "): ")
+    choice = raw_input()
+    if choice == "":
+        break
+    # TODO: check whether printer exists
+    printer = choice
+    break
+while True:
     sys.stdout.write("Pages per sheet (" + str(pages_per_page) + "): ")
     choice = raw_input()
     if choice == "":
