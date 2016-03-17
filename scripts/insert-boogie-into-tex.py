@@ -1,3 +1,14 @@
+"""
+Usage: insert-boogie-into-tex <filename> [<index>]
+
+Finds the (<index>+1)'st most recent pdf from the folder
+of Boogie Board pdfs (default <index> = 0, which means the
+most recent pdf). This pdf is then copied to the folder
+containing <filename>, cropped and rotated east.
+The script outputs LaTeX code to include this image into
+a LaTeX-file.
+Requires pyPdf, ghostscript, pdftk.
+"""
 import glob
 import re
 from pyPdf import PdfFileReader, PdfFileWriter

@@ -1,3 +1,13 @@
+"""
+Usage: merge-pdfs <file1> <file2> [<file3> ...]
+
+Merges multiple pdfs into a single pdf.
+The resulting pdf is called 'merged.pdf' (unless that
+filename is taken, in which case a number is appended
+for uniqueness).
+The script requires pdftk to be present on the machine
+(and in the path).
+"""
 import sys
 import os.path
 from subprocess import call

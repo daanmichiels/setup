@@ -1,3 +1,11 @@
+"""
+Usage: orient-pdf-east.py <file1> [<file2> ...]
+
+Orients all pages in a pdf east. The files are overwritten,
+unless the rotated file's size is significantly different
+from the original's (to avoid corruption).
+The script requires pdftk to be present and in the path.
+"""
 import sys
 import os.path
 from subprocess import call

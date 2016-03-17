@@ -1,9 +1,25 @@
+"""
+Usage: print-illini <filename>
+
+Script for printing a file from a remote computer.
+Intended for printing of articles on the printer at my office at
+the math departent.
+The file is copied to the remote computer over ssh (scp).
+Then the file is printed using the 'lpr' command given over ssh.
+This script requires pscp.exe and plink.exe to function (and they
+need to be found in the path).
+"""
+
 import getpass
 import os.path
 import sys
 import string
 import re
 from subprocess import call
+
+if(sys.version_info[0] != 2):
+    print("Please use Python 2.")
+    sys.exit(0)
 
 # Server configuration
 user = "michiel2"
